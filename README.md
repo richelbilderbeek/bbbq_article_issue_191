@@ -6,15 +6,18 @@ BBBQ article issue 191
 
 The ten AAs before the epitope, e.g.:
 
+```
 SVTGNALWKAMEKSSLTQHSW
 1234567890^         ^
           |         |
           + epitope +
+```
 
 ## ten_before_epitopes.csv
 
 The counts of the AAs at the ten spots before the epitopes:
 
+```
 SVTGNALWKAMEKSSLTQHSW
 1234567890-----------
 ^^^^^^^^^^
@@ -29,22 +32,25 @@ SVTGNALWKAMEKSSLTQHSW
 ||+-------- three
 |+--------- two
 +---------- one
+```
 
 ## ten_after_epitopes.txt
 
 The ten AAs after the epitope, e.g.:
 
+```
 MEKSSLTQHSWQSLKDRYLKH
 ^         ^0987654321
 |         |
 + epitope +
+```
 
 ## ten_after_epitopes.csv
 
 The counts of the AAs at the ten spots after the epitopes:
 
+```
 MEKSSLTQHSWQSLKDRYLKH
-ALWKAMEKSSLTQHSW
 -----------0987654321
            ^^^^^^^^^^
            ||||||||||
@@ -58,4 +64,5 @@ ALWKAMEKSSLTQHSW
            ||+-------- minus_eight
            |+--------- minus_nine
            +---------- minus_ten
+```
 
