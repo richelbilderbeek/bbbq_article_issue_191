@@ -9,7 +9,7 @@ n <- 10
 #'   '-1' means the last character, '-2' the one-but-last
 analyse_epitopes <- function(
   epitope_sequences,
-  positions = c(1, 2, 3, 4, 5)
+  positions
 ) {
   testthat::expect_true(is.character(epitope_sequences))
   testthat::expect_true(is.numeric(positions))
@@ -47,57 +47,62 @@ analyse_epitopes <- function(
 }
 
 # Collect all the MHC-I matches
-t <- readr::read_csv("matches_1.csv")
+matches_filename <- "../bbbq_article_issue_157/matches_1.csv"
+testthat::expect_true(file.exists(matches_filename))
+t <- readr::read_csv(matches_filename)
 # Keep the uniquely mapped epitopes
 t_unique <- t %>% dplyr::filter(!is.na(gene_name))
 
-# The five epitopes before
-t_matches <- stringr::str_match(
+# Get the n AAs before the sequence
+sequences_before_epitopes <- stringr::str_match(
   string = t_unique$sequence,
   pattern = paste0("[[:upper:]]{", n, "}", t_unique$epitope_sequence)
 )[, 1]
-t_matches <- t_matches[!is.na(t_matches)]
-testthat::expect_equal(6933, length(t_matches))
+sequences_before_epitopes <- sequences_before_epitopes[!is.na(sequences_before_epitopes)]
+testthat::expect_equal(6847, length(sequences_before_epitopes))
+knitr::kable(head(sequences_before_epitopes))
 readr::write_lines(
-  t_matches,
+  sequences_before_epitopes,
   paste0("~/", english::as.english(n) ,"_before_epitopes.txt")
 )
 readr::write_csv(
-  analyse_epitopes(t_matches, positions = seq(1, n)),
+  analyse_epitopes(sequences_before_epitopes, positions = seq(1, n)),
   paste0("~/", english::as.english(n) ,"_before_epitopes.csv")
 )
-t <- tibble::tibble(
-  name = paste0("iloverichel", seq_len(length(t_matches))),
-  sequence = stringr::str_sub(t_matches, 1, n)
+t_sequences_before_epitopes <- tibble::tibble(
+  name = paste0("iloverichel", seq_len(length(sequences_before_epitopes))),
+  sequence = stringr::str_sub(sequences_before_epitopes, 1, n)
 )
 pureseqtmr::save_tibble_as_fasta_file(
-  t,
+  t_sequences_before_epitopes,
   paste0("~/", english::as.english(n) ,"_before_epitopes.fasta")
 )
 
-# The five epitopes after
-t_matches <- stringr::str_match(
+###############################################################################
+# The n epitopes after
+###############################################################################
+sequences_after_epitopes <- stringr::str_match(
   string = t_unique$sequence,
   pattern = paste0(t_unique$epitope_sequence, "[[:upper:]]{", n, "}")
 )[, 1]
-t_matches <- t_matches[!is.na(t_matches)]
-testthat::expect_equal(6771, length(t_matches))
+sequences_after_epitopes <- sequences_after_epitopes[!is.na(sequences_after_epitopes)]
+testthat::expect_equal(6672, length(sequences_after_epitopes))
 
 readr::write_lines(
-  t_matches,
+  sequences_after_epitopes,
   paste0("~/", english::as.english(n) ,"_after_epitopes.txt")
 )
 readr::write_csv(
-  analyse_epitopes(t_matches, positions = seq(-n, -1)),
+  analyse_epitopes(sequences_after_epitopes, positions = seq(-n, -1)),
   paste0("~/", english::as.english(n) ,"_after_epitopes.csv")
 )
 
-t <- tibble::tibble(
-  name = paste0("iloverichel", seq_len(length(t_matches))),
-  sequence = stringr::str_sub(t_matches, -n)
+t_sequences_after_epitopes <- tibble::tibble(
+  name = paste0("iloverichel", seq_len(length(sequences_after_epitopes))),
+  sequence = stringr::str_sub(sequences_after_epitopes, -n)
 )
 pureseqtmr::save_tibble_as_fasta_file(
-  t,
+  t_sequences_after_epitopes,
   paste0("~/", english::as.english(n) ,"_after_epitopes.fasta")
 )
 
