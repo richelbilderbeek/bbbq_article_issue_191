@@ -2,6 +2,42 @@
 
 BBBQ article issue 191
 
+## Overview
+
+This is the first sequence and its match to the epitope `MEKSSLTQHSW`.
+
+Scroll to the right to see the match in the sequence,
+or see the zoomed-in part below.
+
+```
+> TE2IP_HUMAN Telomeric repeat-binding factor 2-interacting protein 1 OS=Homo sapiens (Human) OX=9606 GN=TERF2IP PE=1 SV=1
+MAEAMDLGKDPNGPTHSSTLFVRDDGSSMSFYVRPSPAKRRLSTLILHGGGTVCRVQEPGAVLLAQPGEALAEASGDFISTQYILDCVERNERLELEAYRLGPASAADTGSEAKPGALAEGAAEPEPQRHAGRIAFTDADDVAILTYVKENARSPSSVTGNALWKAMEKSSLTQHSWQSLKDRYLKHLRGQEHKYLLGDAPVSPSSQKLKRKAEEDPEAADSGEPQNKRTPDLPEEEYVKEEIQENEEAVKKMLVEATREFEEVVVDESPPDFEIHITMCDDDPPTPEEDSETQPDEEEEEEEEKVSQPEVGAAIKIIRQLMEKFNLDLSTVTQAFLKNSGELEATSAFLASGQRADGYPIWSRQDDIDLQKDDEDTREALVKKFGAQNVARRIEFRKK
+                                                                                                                                                            ^        ^^         ^^        ^
+                                                                                                                                                            | before ||         ||        |
+                                                                                                                                                            + before +|         ||        |
+                                                                                                                                                                      + epitope +|        |
+                                                                                                                                                                                 + after  +
+```
+
+This is the zoomed-in part:
+
+```
+SVTGNALWKAMEKSSLTQHSWQSLKDRYLKH
+1234567890-----------0987654321
+^^^^^^^^^^           ^^^^^^^^^^
+||||||||||           ||||||||||
+|||||||||+- ten      |||||||||+- minus_one
+||||||||+-- nine     ||||||||+-- minus_two
+|||||||+--- eight    |||||||+--- minus_three
+||||||+---- seven    ||||||+---- minus_four
+|||||+----- six      |||||+----- minus_fix
+||||+------ five     ||||+------ minus_six
+|||+------- four     |||+------- minus_seven
+||+-------- three    ||+-------- minus_eight
+|+--------- two      |+--------- minus_nine
++---------- one      +---------- minus_ten
+```
+
 ## ten_before_epitopes.txt
 
 The ten AAs before the epitope, e.g.:
