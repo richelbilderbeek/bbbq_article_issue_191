@@ -23,19 +23,29 @@ This is the zoomed-in part:
 
 ```
 SVTGNALWKAMEKSSLTQHSWQSLKDRYLKH
-1234567890-----------0987654321
+0987654321-----------1234567890
 ^^^^^^^^^^           ^^^^^^^^^^
 ||||||||||           ||||||||||
-|||||||||+- ten      |||||||||+- minus_one
-||||||||+-- nine     ||||||||+-- minus_two
-|||||||+--- eight    |||||||+--- minus_three
-||||||+---- seven    ||||||+---- minus_four
-|||||+----- six      |||||+----- minus_fix
-||||+------ five     ||||+------ minus_six
-|||+------- four     |||+------- minus_seven
-||+-------- three    ||+-------- minus_eight
-|+--------- two      |+--------- minus_nine
-+---------- one      +---------- minus_ten
+||||||||||           |||||||||+- ten
+||||||||||           ||||||||+-- nine
+||||||||||           |||||||+--- eight
+||||||||||           ||||||+---- seven
+||||||||||           |||||+----- six
+||||||||||           ||||+------ five
+||||||||||           |||+------- four
+||||||||||           ||+-------- three
+||||||||||           |+--------- two
+||||||||||           +---------- one
+|||||||||+- minus_one      
+||||||||+-- minus_two     
+|||||||+--- minus_three    
+||||||+---- minus_four    
+|||||+----- minus_fix      
+||||+------ minus_six     
+|||+------- minus_seven     
+||+-------- minus_eight    
+|+--------- minus_nine      
++---------- minus_ten      
 ```
 
 ## ten_before_epitopes.txt
@@ -55,19 +65,19 @@ The counts of the AAs at the ten spots before the epitopes:
 
 ```
 SVTGNALWKAMEKSSLTQHSW
-1234567890-----------
-^^^^^^^^^^
-||||||||||
-|||||||||+- ten
-||||||||+-- nine
-|||||||+--- eight
-||||||+---- seven
-|||||+----- six
-||||+------ five
-|||+------- four
-||+-------- three
-|+--------- two
-+---------- one
+0987654321-----------
+^^^^^^^^^^           ^^^^^^^^^^
+||||||||||           ||||||||||
+|||||||||+- minus_one      
+||||||||+-- minus_two     
+|||||||+--- minus_three    
+||||||+---- minus_four    
+|||||+----- minus_fix      
+||||+------ minus_six     
+|||+------- minus_seven     
+||+-------- minus_eight    
+|+--------- minus_nine      
++---------- minus_ten      
 ```
 
 ## ten_after_epitopes.txt
@@ -87,18 +97,18 @@ The counts of the AAs at the ten spots after the epitopes:
 
 ```
 MEKSSLTQHSWQSLKDRYLKH
------------0987654321
+0987654321-----------1234567890
            ^^^^^^^^^^
            ||||||||||
-           |||||||||+- minus_one
-           ||||||||+-- minus_two
-           |||||||+--- minus_three
-           ||||||+---- minus_four
-           |||||+----- minus_fix
-           ||||+------ minus_six
-           |||+------- minus_seven
-           ||+-------- minus_eight
-           |+--------- minus_nine
-           +---------- minus_ten
+           |||||||||+- ten
+           ||||||||+-- nine
+           |||||||+--- eight
+           ||||||+---- seven
+           |||||+----- six
+           ||||+------ five
+           |||+------- four
+           ||+-------- three
+           |+--------- two
+           +---------- one
 ```
 

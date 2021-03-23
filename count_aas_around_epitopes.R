@@ -38,9 +38,10 @@ analyse_epitopes <- function(
   t_wide <- tidyr::pivot_wider(t_all, names_from = pos, values_from = n) %>% dplyr::arrange(char)
 
   # Make the column names reader friendly
+  # Reverse the names, as requested
   names(t_wide) <- c(
     names(t_wide)[1],
-    stringr::str_replace(english::as.english(as.numeric(names(t_wide)[-1])), " ", "_")
+    rev(stringr::str_replace(english::as.english(-as.numeric(names(t_wide)[-1])), " ", "_"))
   )
 
   return(t_wide)
@@ -66,7 +67,10 @@ readr::write_lines(
   paste0("~/", english::as.english(n) ,"_before_epitopes.txt")
 )
 readr::write_csv(
-  analyse_epitopes(sequences_before_epitopes, positions = seq(1, n)),
+  analyse_epitopes(
+    epitope_sequences = sequences_before_epitopes,
+    positions = seq(1, n)
+  ),
   paste0("~/", english::as.english(n) ,"_before_epitopes.csv")
 )
 t_sequences_before_epitopes <- tibble::tibble(
