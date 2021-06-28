@@ -37,3 +37,5 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+schellens_et_al_2015.xlsl
+UP000009136.fasta
