@@ -1,0 +1,48 @@
+Package: bbbq
+Title: The Bilderbeek Bianchi and Bogaart Question
+Version: 1.7
+Authors@R: 
+    person(given = "Richel",
+           family = "Bilderbeek",
+           role = c("aut", "cre"),
+           email = "richel@richelbilderbeek.nl")
+Description:
+    The Bilderbeek Bianchi and Bogaart Question
+    is a very important question.
+    This package answers this question.
+    These answers are not published yet.
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.1.1
+Imports:
+    Biostrings,
+    data.table,
+    dplyr,
+    epiprepreds (>= 0.3),
+    EpitopePrediction,
+    glue,
+    ggplot2,
+    magrittr,
+    mhcnuggetsr (>= 0.11),
+    mhcnpreds,
+    netmhc2pan,
+    nmhc2ppreds,
+    Peptides,
+    pureseqtmr (>= 1.3),
+    rappdirs,
+    readr,
+    readxl,
+    seqinr,
+    stringr,  
+    tibble,
+    tmhmm
+Suggests:
+    beastier,
+    devtools,
+    profvis,
+    testit,
+    testthat (>= 2.1.0),
+    tidyr,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
