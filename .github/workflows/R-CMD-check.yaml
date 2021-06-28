@@ -27,6 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          remotes::install_github("richelbilderbeek/bianchietal2017")
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
@@ -34,18 +35,6 @@ jobs:
           remotes::install_cran("lintr")
         shell: Rscript {0}
 
-      - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
-        shell: Rscript {0}
-
-      - name: Make sure that no files are created in the .cache folder
-        run: testthat::expect_equal(0, length(list.files(rappdirs::user_cache_dir(appname = "beautier"))))
-        shell: Rscript {0}
-
-      - name: Test coverage
-        run: Rscript -e 'covr::codecov()'
-
-      - name: Lint
-        run: Rscript -e 'lintr::lint_package()'
-
+      - name: Make
+        run: make
 

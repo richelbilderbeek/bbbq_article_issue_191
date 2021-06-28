@@ -38,7 +38,7 @@ for (i in seq_len(nrow(t_matches))) {
   t_matches$n_matches_cow[i] <- length(matches_cow)
 }
 t_matches
-readr::write_csv(x = t_matches, "~/n_matches.csv")
+readr::write_csv(x = t_matches, "n_matches.csv")
 
 text <- paste0(
   "number of unique epitopes: ", length(epitope_sequences), "\n",
@@ -49,4 +49,4 @@ text <- paste0(
     sum(t_matches$n_matches_cow != 0),
     "\n"
 )
-readr::write_lines(x = text, "~/n_matches.txt")
+readr::write_lines(x = text, "n_matches.txt")

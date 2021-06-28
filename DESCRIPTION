@@ -15,6 +15,7 @@ License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 7.1.1
 Imports:
+    bianchietal2017,
     Biostrings,
     data.table,
     dplyr,
