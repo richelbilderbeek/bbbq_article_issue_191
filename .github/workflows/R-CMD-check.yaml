@@ -27,8 +27,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          remotes::install_github("richelbilderbeek/bianchi_et_al_2017")
           install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_github("richelbilderbeek/bianchi_et_al_2017")
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
           remotes::install_cran("covr")
